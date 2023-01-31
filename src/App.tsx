@@ -32,7 +32,7 @@ const AccountForm = () => {
   };
 
   return (
-    <Box bgColor="#f3f3f3" h="100vh">
+    <Box bgColor="gray.600" h="100vh">
       <Center>
         <Flex width="464px" my="64px" direction="column" align="center">
           <Heading mb="16px" fontSize="24px">
@@ -51,9 +51,9 @@ const AccountForm = () => {
               <Heading fontSize="16px">Set Password</Heading>
 
               <FormControl>
-                <Alert status="error" bgColor="#feeeed">
+                <Alert status="error" bgColor="gray.500">
                   <AlertIcon as={RiErrorWarningLine} />
-                  <AlertDescription fontSize="12px" color="#f65e4e">
+                  <AlertDescription fontSize="12px" color="red.100">
                     Your account don’t have password yet. Set password so you
                     can log in with your Layoutbase account.
                   </AlertDescription>
@@ -85,7 +85,7 @@ const AccountForm = () => {
               />
 
               <FormControl>
-                <Flex>
+                <Flex justifyContent="flex-end">
                   <Button
                     text="Submit"
                     type="submit"

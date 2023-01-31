@@ -16,6 +16,8 @@ const theme = extendTheme({
       200: "#eeeeee",
       300: "#d0d0d0",
       400: "#585858",
+      500: "#feeeed",
+      600: "#f3f3f3",
     },
   },
 });
