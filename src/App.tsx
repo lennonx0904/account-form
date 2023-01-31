@@ -26,8 +26,7 @@ const AccountForm = () => {
     handleSubmit,
     getValues,
     formState: { errors },
-  } = useForm<FormProps>();
-
+  } = useForm<FormProps>({ mode: "onBlur" });
 
   const onFormSumbit = (formObj: FormProps) => {
     console.log("Form Submitted", formObj);
@@ -115,7 +114,10 @@ const AccountForm = () => {
                     required: "Confirm password is required",
                     validate: (value) => {
                       const { password } = getValues();
-                      return password === value || "Password is not match.";
+                      return (
+                        password === value ||
+                        "Please make sure your passwords match."
+                      );
                     },
                   })}
                 />
