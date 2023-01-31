@@ -10,9 +10,9 @@ import {
   AlertDescription,
 } from "@chakra-ui/react";
 import { RiErrorWarningLine } from "react-icons/ri";
-import { useForm } from "react-hook-form";
 
 import { FormInput, Button } from "components";
+import { useFormInput } from "hooks";
 
 interface FormProps {
   password: string;
@@ -21,11 +21,11 @@ interface FormProps {
 
 const AccountForm = () => {
   const {
-    register,
     handleSubmit,
-    getValues,
     formState: { errors },
-  } = useForm<FormProps>({ mode: "onBlur" });
+    registerPassword,
+    registerConfirmPassword,
+  } = useFormInput();
 
   const onFormSumbit = (formObj: FormProps) => {
     console.log("Form Submitted", formObj);
@@ -72,15 +72,7 @@ const AccountForm = () => {
                 id="password"
                 label="Set Password"
                 htmlFor="password"
-                register={register("password", {
-                  required: "Password is required",
-                  pattern: {
-                    value:
-                      /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]{8,}$/,
-                    message:
-                      "Minimum eight characters, at least one letter, one number and one special character.",
-                  },
-                })}
+                register={registerPassword}
                 errors={errors.password}
               />
 
@@ -88,16 +80,7 @@ const AccountForm = () => {
                 id="confirmPassword"
                 label=" Confirm Password"
                 htmlFor="confirmPassword"
-                register={register("confirmPassword", {
-                  required: "Confirm password is required",
-                  validate: (value) => {
-                    const { password } = getValues();
-                    return (
-                      password === value ||
-                      "Please make sure your passwords match."
-                    );
-                  },
-                })}
+                register={registerConfirmPassword}
                 errors={errors.confirmPassword}
               />
 
