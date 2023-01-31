@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 
 const FormInput = (props: any) => {
-  const { id, label, htmlFor, register, errors } = props;
+  const { id, label, htmlFor, register, errors, isDisabled, value } = props;
 
   const isInvalid = Boolean(errors);
 
@@ -18,6 +18,8 @@ const FormInput = (props: any) => {
       </FormLabel>
       <Input
         id={id}
+        value={value}
+        isDisabled={isDisabled}
         _focus={{ borderColor: "red.100", boxShadow: "none" }}
         // _hover={{ borderColor: "gray.100" }}
         _disabled={{

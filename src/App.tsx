@@ -5,17 +5,14 @@ import {
   Heading,
   Stack,
   FormControl,
-  FormLabel,
   Alert,
   AlertIcon,
   AlertDescription,
-  Input,
-  Button,
 } from "@chakra-ui/react";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 
-import { FormInput } from "components";
+import { FormInput, Button } from "components";
 
 interface FormProps {
   password: string;
@@ -63,22 +60,13 @@ const AccountForm = () => {
                 </Alert>
               </FormControl>
 
-              <FormControl>
-                <FormLabel htmlFor="email" fontSize="12px" color="#585858">
-                  Email (Your account)
-                </FormLabel>
-                <Input
-                  id="email"
-                  value="hello@branch8.com"
-                  isDisabled
-                  _disabled={{
-                    bgColor: "#eeeeee",
-                    color: "#d0d0d0",
-                    opacity: 1,
-                    cursor: "not-allowed",
-                  }}
-                />
-              </FormControl>
+              <FormInput
+                id="email"
+                value="hello@branch8.com"
+                label="Email (Your account)"
+                htmlFor="email"
+                isDisabled
+              />
 
               <FormInput
                 id="password"
@@ -116,17 +104,16 @@ const AccountForm = () => {
               <FormControl>
                 <Flex>
                   <Button
+                    text="Submit"
                     type="submit"
                     size="md"
                     color="white"
-                    bgColor="#f65e4e"
-                    _hover={{ bgColor: "#fc7365" }}
-                    _active={{ bgColor: "#ee5140" }}
-                    _focus={{ boxShadow: "none" }}
+                    bgColor="red.100"
+                    onHoverStyle={{ bgColor: "red.300" }}
+                    onActiveStyle={{ bgColor: "red.200" }}
+                    onFocusStyle={{ boxShadow: "none" }}
                     onClick={handleSubmit(onFormSumbit)}
-                  >
-                    Submit
-                  </Button>
+                  />
                 </Flex>
               </FormControl>
             </Stack>
