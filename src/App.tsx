@@ -13,11 +13,7 @@ import { RiErrorWarningLine } from "react-icons/ri";
 
 import { FormInput, Button } from "components";
 import { useFormInput } from "hooks";
-
-interface FormProps {
-  password: string;
-  confirmPassword: string;
-}
+import { FormProps } from "interface";
 
 const AccountForm = () => {
   const {

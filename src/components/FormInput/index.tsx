@@ -6,7 +6,9 @@ import {
   FormErrorMessage,
 } from "@chakra-ui/react";
 
-const FormInput = (props: any) => {
+import { FormInputProps } from "interface";
+
+const FormInput = (props: FormInputProps) => {
   const { id, label, htmlFor, register, errors, isDisabled, value } = props;
 
   const isInvalid = Boolean(errors);

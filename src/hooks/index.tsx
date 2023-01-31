@@ -1,9 +1,6 @@
 import { useForm } from "react-hook-form";
 
-interface FormProps {
-  password: string;
-  confirmPassword: string;
-}
+import { FormProps } from "interface";
 
 export const useFormInput = () => {
   const { register, handleSubmit, getValues, formState } = useForm<FormProps>({
