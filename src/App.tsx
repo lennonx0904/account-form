@@ -15,6 +15,8 @@ import {
 import { RiErrorWarningLine } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 
+import { FormInput } from "components";
+
 interface FormProps {
   password: string;
   confirmPassword: string;
@@ -78,54 +80,38 @@ const AccountForm = () => {
                 />
               </FormControl>
 
-              <FormControl>
-                <FormLabel htmlFor="password" fontSize="12px" color="#585858">
-                  Set Password
-                </FormLabel>
-                <Input
-                  id="password"
-                  _focus={{ borderColor: "#f65e4e", boxShadow: "none" }}
-                  {...register("password", {
-                    required: "Password is required",
-                    pattern: {
-                      value:
-                        /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]{8,}$/,
-                      message:
-                        "Minimum eight characters, at least one letter, one number and one special character.",
-                    },
-                  })}
-                />
-              </FormControl>
+              <FormInput
+                id="password"
+                label="Set Password"
+                htmlFor="password"
+                register={register("password", {
+                  required: "Password is required",
+                  pattern: {
+                    value:
+                      /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]{8,}$/,
+                    message:
+                      "Minimum eight characters, at least one letter, one number and one special character.",
+                  },
+                })}
+                errors={errors.password}
+              />
 
-              {errors.password && <p>{errors.password.message}</p>}
-
-              <FormControl>
-                <FormLabel
-                  htmlFor="confirmPassword"
-                  fontSize="12px"
-                  color="#585858"
-                >
-                  Confirm Password
-                </FormLabel>
-                <Input
-                  id="confirmPassword"
-                  _focus={{ borderColor: "#f65e4e", boxShadow: "none" }}
-                  {...register("confirmPassword", {
-                    required: "Confirm password is required",
-                    validate: (value) => {
-                      const { password } = getValues();
-                      return (
-                        password === value ||
-                        "Please make sure your passwords match."
-                      );
-                    },
-                  })}
-                />
-              </FormControl>
-
-              {errors.confirmPassword && (
-                <p>{errors.confirmPassword.message}</p>
-              )}
+              <FormInput
+                id="confirmPassword"
+                label=" Confirm Password"
+                htmlFor="confirmPassword"
+                register={register("confirmPassword", {
+                  required: "Confirm password is required",
+                  validate: (value) => {
+                    const { password } = getValues();
+                    return (
+                      password === value ||
+                      "Please make sure your passwords match."
+                    );
+                  },
+                })}
+                errors={errors.confirmPassword}
+              />
 
               <FormControl>
                 <Flex>
