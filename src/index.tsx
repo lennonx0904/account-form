@@ -27,12 +27,26 @@ const theme = extendTheme({
   components: {
     Button: {
       baseStyle: {
-        size: "lg",
+        size: "md",
         color: "white.basic",
         bgColor: "red.primary",
         _focus: { boxShadow: "none" },
         _hover: { bgColor: "red.primaryHover" },
         _active: { bgColor: "red.primaryDark" },
+      },
+    },
+    Input: {
+      baseStyle: {
+        field: {
+          _disabled: {
+            bgColor: "gray.200",
+            color: "gray.300",
+            opacity: 1,
+            cursor: "not-allowed",
+          },
+          _placeholder: { color: "gray.700", fontSize: "14px" },
+          _hover: { borderColor: "gray.100" },
+        },
       },
     },
   },
