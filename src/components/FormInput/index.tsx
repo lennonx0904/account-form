@@ -9,7 +9,17 @@ import {
 import { FormInputProps } from "interface";
 
 const FormInput = (props: FormInputProps) => {
-  const { id, label, htmlFor, register, errors, isDisabled, value } = props;
+  const {
+    id,
+    label,
+    htmlFor,
+    type,
+    placeholder,
+    register,
+    errors,
+    isDisabled,
+    value,
+  } = props;
 
   const isInvalid = Boolean(errors);
 
@@ -21,6 +31,8 @@ const FormInput = (props: FormInputProps) => {
       <Input
         id={id}
         value={value}
+        type={type}
+        placeholder={placeholder}
         isDisabled={isDisabled}
         _focus={{ borderColor: "red.100", boxShadow: "none" }}
         // _hover={{ borderColor: "gray.100" }}

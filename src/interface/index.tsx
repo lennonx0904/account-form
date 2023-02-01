@@ -9,6 +9,8 @@ export interface FormInputProps {
   id: string;
   label: string;
   htmlFor: string;
+  type: string;
+  placeholder: string;
   isDisabled?: boolean;
   value?: string;
   register?: UseFormRegisterReturn<"password" | "confirmPassword">;
@@ -25,8 +27,8 @@ export interface ButtonProps {
 
   /**
    * Using `any` as the type is due to that I haven't confirm the UI design
-   * 
-   * it should be like: 
+   *
+   * it should be like:
    *  onHoverStyle: {
    *    bgColor: string;
    *    boxShadow: string;

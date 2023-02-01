@@ -61,6 +61,8 @@ const AccountForm = () => {
                 value="hello@branch8.com"
                 label="Email (Your account)"
                 htmlFor="email"
+                type="email"
+                placeholder="Please enter your email"
                 isDisabled
               />
 
@@ -68,6 +70,8 @@ const AccountForm = () => {
                 id="password"
                 label="Set Password"
                 htmlFor="password"
+                type="password"
+                placeholder="Please enter your password"
                 register={registerPassword}
                 errors={errors.password}
               />
@@ -76,6 +80,8 @@ const AccountForm = () => {
                 id="confirmPassword"
                 label=" Confirm Password"
                 htmlFor="confirmPassword"
+                type="password"
+                placeholder="Please enter your password again"
                 register={registerConfirmPassword}
                 errors={errors.confirmPassword}
               />
