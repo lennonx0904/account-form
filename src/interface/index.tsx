@@ -19,24 +19,6 @@ export interface FormInputProps {
 
 export interface ButtonProps {
   text: string;
-  type?: "button" | "submit" | "reset";
-  size: string;
-  color: string;
-  bgColor: string;
+  type: "button" | "submit" | "reset";
   onClick: () => void;
-
-  /**
-   * Using `any` as the type is due to that I haven't confirm the UI design
-   *
-   * it should be like:
-   *  onHoverStyle: {
-   *    bgColor: string;
-   *    boxShadow: string;
-   *    // and more
-   *  }
-   *
-   */
-  onHoverStyle: any;
-  onActiveStyle: any;
-  onFocusStyle: any;
 }

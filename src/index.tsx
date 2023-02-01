@@ -6,10 +6,10 @@ import App from "./App";
 const theme = extendTheme({
   colors: {
     red: {
-      100: "#f65e4e",
-      200: "#ee5140",
-      300: "#fc7365",
-      400: "rgba(255,62,62, 0.1)",
+      primary: "#f65e4e",
+      primaryDark: "#ee5140",
+      primaryHover: "#fc7365",
+      errorBg: "rgba(255,62,62, 0.1)",
     },
     gray: {
       100: "rgba(196,196,196, 1)",
@@ -21,7 +21,19 @@ const theme = extendTheme({
       700: "#b2b2b2",
     },
     white: {
-      100: "#ffffff",
+      basic: "#ffffff",
+    },
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        size: "lg",
+        color: "white.basic",
+        bgColor: "red.primary",
+        _focus: { boxShadow: "none" },
+        _hover: { bgColor: "red.primaryHover" },
+        _active: { bgColor: "red.primaryDark" },
+      },
     },
   },
 });

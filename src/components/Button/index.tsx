@@ -6,26 +6,11 @@ const Button = (props: ButtonProps) => {
   const {
     text,
     type,
-    size,
-    color,
-    bgColor,
-    onHoverStyle,
-    onActiveStyle,
-    onFocusStyle,
     onClick,
   } = props;
 
   return (
-    <ButtonComponent
-      type={type}
-      size={size}
-      color={color}
-      bgColor={bgColor}
-      _hover={onHoverStyle}
-      _active={onActiveStyle}
-      _focus={onFocusStyle}
-      onClick={onClick}
-    >
+    <ButtonComponent type={type} onClick={onClick} variant={"variants"}>
       {text}
     </ButtonComponent>
   );

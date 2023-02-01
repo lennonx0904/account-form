@@ -34,7 +34,7 @@ const FormInput = (props: FormInputProps) => {
         type={type}
         placeholder={placeholder}
         isDisabled={isDisabled}
-        _focus={{ borderColor: "red.100", boxShadow: "none" }}
+        _focus={{ borderColor: "red.primary", boxShadow: "none" }}
         _disabled={{
           bgColor: "gray.200",
           color: "gray.300",
@@ -42,7 +42,7 @@ const FormInput = (props: FormInputProps) => {
           cursor: "not-allowed",
         }}
         _placeholder={{ color: "gray.700", fontSize: "14px" }}
-        bgColor={isInvalid ? "red.400" : "white.100"}
+        bgColor={isInvalid ? "red.errorBg" : "white.basic"}
         /**
          *  FIXME:
          *  When user typing, the cursor usually hover on the input.

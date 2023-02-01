@@ -49,7 +49,7 @@ const AccountForm = () => {
               <FormControl>
                 <Alert status="error" bgColor="gray.500">
                   <AlertIcon as={RiErrorWarningLine} />
-                  <AlertDescription fontSize="12px" color="red.100">
+                  <AlertDescription fontSize="12px" color="red.primary">
                     Your account don’t have password yet. Set password so you
                     can log in with your Layoutbase account.
                   </AlertDescription>
@@ -91,12 +91,6 @@ const AccountForm = () => {
                   <Button
                     text="Submit"
                     type="submit"
-                    size="md"
-                    color="white"
-                    bgColor="red.100"
-                    onHoverStyle={{ bgColor: "red.300" }}
-                    onActiveStyle={{ bgColor: "red.200" }}
-                    onFocusStyle={{ boxShadow: "none" }}
                     onClick={handleSubmit(onFormSumbit)}
                   />
                 </Flex>
