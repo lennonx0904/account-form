@@ -35,13 +35,24 @@ const FormInput = (props: FormInputProps) => {
         placeholder={placeholder}
         isDisabled={isDisabled}
         _focus={{ borderColor: "red.100", boxShadow: "none" }}
-        // _hover={{ borderColor: "gray.100" }}
         _disabled={{
           bgColor: "gray.200",
           color: "gray.300",
           opacity: 1,
           cursor: "not-allowed",
         }}
+        _placeholder={{ color: "gray.700", fontSize: "14px" }}
+        bgColor={isInvalid ? "red.400" : "white.100"}
+        /**
+         *  FIXME:
+         *  When user typing, the cursor usually hover on the input.
+         *  it will replace the UI when on focus.
+         *  Using <PseudoBox as="input"/> maybe can fix the problem,
+         *  but I got the error: Module '"@chakra-ui/react"' has no exported member 'PseudoBox'.
+         *
+         * ref: https://v0.chakra-ui.com/pseudobox
+         */
+        // _hover={{ borderColor: "gray.100" }}
         {...register}
       />
       <FormErrorMessage>
