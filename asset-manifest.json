@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/account-form/static/js/main.0ad2efd0.js",
+    "index.html": "/account-form/index.html",
+    "main.0ad2efd0.js.map": "/account-form/static/js/main.0ad2efd0.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.0ad2efd0.js"
+  ]
+}
